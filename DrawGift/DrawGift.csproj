@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE733360-733F-4883-B895-DBA533609606}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DrawGift</RootNamespace>
+    <AssemblyName>DrawGift</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\GALLERIA\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DF5DFBB962B05DD2C6E5ECA2296113B67B9C2779</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DrawGift_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="africastalking-API-wrapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AfricasTalkingGateway.1.0.0\lib\net40\africastalking-API-wrapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.9.10\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net4\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Twilio.Api, Version=3.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.4.7.2\lib\3.5\Twilio.Api.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin\settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\settings.Designer.cs">
+      <DependentUpon>settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\connector.cs" />
+    <Compile Include="Base\InputValidator.cs" />
+    <Compile Include="campaign\addcampaign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="campaign\addcampaign.Designer.cs">
+      <DependentUpon>addcampaign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="campaign\campaigns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="campaign\campaigns.Designer.cs">
+      <DependentUpon>campaigns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customers\addcustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customers\addcustomer.Designer.cs">
+      <DependentUpon>addcustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customers\customerdetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customers\customerdetails.Designer.cs">
+      <DependentUpon>customerdetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customers\editcustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customers\editcustomer.Designer.cs">
+      <DependentUpon>editcustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dashboard.Designer.cs">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="drawgiftDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>drawgiftDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="draw\draws.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="draw\draws.Designer.cs">
+      <DependentUpon>draws.cs</DependentUpon>
+    </Compile>
+    <Compile Include="draw\run.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="draw\run.Designer.cs">
+      <DependentUpon>run.cs</DependentUpon>
+    </Compile>
+    <Compile Include="raffle\drawentries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="raffle\drawentries.Designer.cs">
+      <DependentUpon>drawentries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="raffle\entry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="raffle\entry.Designer.cs">
+      <DependentUpon>entry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sigin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sigin.Designer.cs">
+      <DependentUpon>sigin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="raffle\addentry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="raffle\addentry.Designer.cs">
+      <DependentUpon>addentry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="shop\addshop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="shop\addshop.Designer.cs">
+      <DependentUpon>addshop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="shop\editshop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="shop\editshop.Designer.cs">
+      <DependentUpon>editshop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="shop\shops.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="shop\shops.Designer.cs">
+      <DependentUpon>shops.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="admin\settings.resx">
+      <DependentUpon>settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="campaign\addcampaign.resx">
+      <DependentUpon>addcampaign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="campaign\campaigns.resx">
+      <DependentUpon>campaigns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customers\addcustomer.resx">
+      <DependentUpon>addcustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customers\customerdetails.resx">
+      <DependentUpon>customerdetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customers\editcustomer.resx">
+      <DependentUpon>editcustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboard.resx">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="draw\draws.resx">
+      <DependentUpon>draws.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="draw\run.resx">
+      <DependentUpon>run.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="raffle\drawentries.resx">
+      <DependentUpon>drawentries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="raffle\entry.resx">
+      <DependentUpon>entry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sigin.resx">
+      <DependentUpon>sigin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="raffle\addentry.resx">
+      <DependentUpon>addentry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shop\addshop.resx">
+      <DependentUpon>addshop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shop\editshop.resx">
+      <DependentUpon>editshop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shop\shops.resx">
+      <DependentUpon>shops.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="drawgiftDataSet.xsc">
+      <DependentUpon>drawgiftDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="drawgiftDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>drawgiftDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="drawgiftDataSet.xss">
+      <DependentUpon>drawgiftDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DrawGift_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
